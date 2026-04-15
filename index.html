@@ -23,6 +23,72 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="demos/conference/conference.css" />
+    <style>
+        .marquee-wrapper {
+            padding: 60px 0;
+            background: #17161a;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            display: flex;
+        }
+
+        .marquee-scroll {
+            display: flex;
+            animation: marquee-scroll 45s linear infinite;
+            align-items: center;
+        }
+
+        .marquee-item {
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+        }
+
+        @keyframes marquee-scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .pill-text {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            padding: 12px 30px;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 400;
+            background: rgba(255, 255, 255, 0.02);
+            white-space: nowrap;
+            font-family: var(--alt-font);
+            transition: all 0.3s ease;
+        }
+
+        .marquee-item:hover .pill-text {
+            border-color: var(--base-color);
+            color: var(--base-color);
+            background: rgba(217, 10, 44, 0.05);
+        }
+
+        @media (max-width: 767px) {
+            .pill-text {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+
+            .marquee-wrapper {
+                padding: 40px 0;
+            }
+        }
+    </style>
 </head>
 
 <body data-mobile-nav-style="classic">
@@ -188,9 +254,9 @@
                             <i class="bi bi-person-check-fill icon-extra-large text-base-color"></i>
                         </div>
                         <div class="feature-box-content">
-                            <h3 class="alt-font fs-60 fw-700 text-dark-midnight-blue mb-10px">600<span
+                            <h3 class="alt-font fs-60 fw-700 text-dark-midnight-blue mb-10px">60<span
                                     class="fs-40">+</span></h3>
-                            <p class="text-dark fw-500">Registrations</p>
+                            <p class="text-dark fw-500">case studies</p>
                         </div>
                     </div>
                 </div>
@@ -203,7 +269,7 @@
                         <div class="feature-box-content">
                             <h3 class="alt-font fs-60 fw-700 text-dark-midnight-blue mb-10px">700<span
                                     class="fs-40">+</span></h3>
-                            <p class="text-dark fw-500">Opportunities</p>
+                            <p class="text-dark fw-500">Attendees</p>
                         </div>
                     </div>
                 </div>
@@ -216,7 +282,7 @@
                         <div class="feature-box-content">
                             <h3 class="alt-font fs-60 fw-700 text-dark-midnight-blue mb-10px">25<span
                                     class="fs-40">+</span></h3>
-                            <p class="text-dark fw-500">Interactive Sessions</p>
+                            <p class="text-dark fw-500">Sessions </p>
                         </div>
                     </div>
                 </div>
@@ -230,7 +296,7 @@
             <div class="row row-cols-auto row-cols-lg-3 row-cols-md-2 justify-content-center"
                 data-anime='{ "el": "childs", "translateX": [0, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                 <!-- start features box item -->
-                <div class="col md-mb-50px sm-mb-30px">
+                <div class="col md-mb-50px sm-mb-40px">
                     <div class="feature-box feature-box-left-icon-middle">
                         <div class="feature-box-icon ms-30px me-30px lg-ms-20px lg-me-20px">
                             <h1
@@ -239,13 +305,13 @@
                         </div>
                         <div
                             class="feature-box-content border-start border-color-transparent-white-light ps-30px pe-10px lg-ps-20px lg-pe-0px last-paragraph-no-margin">
-                            <span class="text-white fs-24 alt-font d-inline-block fw-300 text-nowrap">Speakers</span>
+                            <span class="text-white fs-24 alt-font d-inline-block fw-300 text-nowrap">Finance</span>
                         </div>
                     </div>
                 </div>
                 <!-- end features box item -->
                 <!-- start features box item -->
-                <div class="col md-mb-50px sm-mb-30px">
+                <div class="col md-mb-50px sm-mb-40px">
                     <div class="feature-box feature-box-left-icon-middle">
                         <div class="feature-box-icon ms-30px me-30px lg-ms-20px lg-me-20px">
                             <h1
@@ -254,7 +320,7 @@
                         </div>
                         <div
                             class="feature-box-content border-start border-color-transparent-white-light ps-30px pe-10px lg-ps-20px lg-pe-0px last-paragraph-no-margin">
-                            <span class="text-white fs-24 alt-font d-inline-block fw-300 text-nowrap">Strategies</span>
+                            <span class="text-white fs-24 alt-font d-inline-block fw-300 text-nowrap">Investments</span>
                         </div>
                     </div>
                 </div>
@@ -269,7 +335,7 @@
                         </div>
                         <div
                             class="feature-box-content border-start border-color-transparent-white-light ps-30px pe-10px lg-ps-20px lg-pe-0px last-paragraph-no-margin">
-                            <span class="text-white fs-24 alt-font d-inline-block fw-300 text-nowrap">Stewardship</span>
+                            <span class="text-white fs-24 alt-font d-inline-block fw-300 text-nowrap">Profit</span>
                         </div>
                     </div>
                 </div>
@@ -279,7 +345,8 @@
     </section>
     <!-- end section -->
     <!-- start section -->
-    <section class="bg-dark-midnight-blue background-position-right-top background-no-repeat md-background-image-none"
+    <section
+        class="bg-dark-midnight-blue background-position-right-top background-no-repeat md-background-image-none xs-pt-50px"
         style="background-image: url('images/demo-conference-about-bg.png')">
         <div class="container-fluid d-none d-md-block">
             <div class="row">
@@ -302,18 +369,15 @@
         </div>
         <div class="container">
             <div class="row align-items-center justify-content-center">
-                <div class="col-lg-6 col-md-10 md-mb-30px md-pt-25px">
-                    <figure class="position-relative mb-50px sm-ps-50px">
+                <div class="col-lg-5 col-md-10 md-mb-30px">
+                    <figure class="position-relative mb-0">
                         <div class="overflow-hidden border-radius-4px position-relative">
-                            <div class="w-100"
-                                data-anime='{ "effect": "slide", "direction": "bt", "color": "#17161a", "duration": 1000, "delay": 0 }'>
-                                <img src="https://images.unsplash.com/photo-1507679799987-c712811a4325?auto=format&fit=crop&q=80&w=1200"
-                                    alt="Conference Environment" class="w-100 border-radius-5px liquid-parallax"
-                                    data-parallax-liquid="true" data-parallax-position="top" data-parallax-scale="1.2">
+                            <div class="w-100 h-300px sm-h-250px">
+                                <!-- Background empty to match screenshot's clean look -->
                             </div>
                         </div>
                         <figcaption
-                            class="position-absolute z-index-1 bottom-minus-50px lg-bottom-minus-30px sm-bottom-minus-50px left-minus-50px lg-left-minus-30px sm-left-minus-0px w-50 md-w-220px text-center last-paragraph-no-margin"
+                            class="position-absolute z-index-1 bottom-0px left-0px w-100 md-w-220px text-center last-paragraph-no-margin"
                             data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 1000, "delay": 500, "staggervalue": 300, "easing": "easeOutQuad" }'>
                             <div class="atropos" data-atropos>
                                 <div class="atropos-scale">
@@ -323,8 +387,8 @@
                                             <span
                                                 class="fs-130 lg-fs-110 d-inline-block ls-minus-5px fw-600 text-shadow-double-large text-outline text-outline-width-2px alt-font">80</span>
                                             <span
-                                                class="alt-font text-uppercase fw-500 ls-2px fs-17 lh-24 d-inline-block">Expert
-                                                speakers</span>
+                                                class="alt-font text-uppercase fw-700 ls-2px fs-17 lh-24 d-inline-block">EXPERT
+                                                Finance</span>
                                         </div>
                                     </div>
                                 </div>
@@ -332,20 +396,20 @@
                         </figcaption>
                     </figure>
                 </div>
-                <div class="col-xl-4 offset-lg-1 col-md-10 col-lg-5"
+                <div class="col-xl-5 col-lg-6"
                     data-anime='{ "el": "childs", "translateY": [50, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                     <h2 class="alt-font text-white fw-500 ls-minus-2px mb-40px sm-mb-30px">
                         <span class="w-20px h-4px d-inline-block bg-base-color me-10px"></span>What to Expect
                     </h2>
                     <!-- start features box item -->
                     <div
-                        class="icon-with-text-style-01 mb-30px pb-30px border-bottom border-color-transparent-white-light">
+                        class="icon-with-text-style-01 mb-20px pb-20px border-bottom border-color-transparent-white-light">
                         <div class="feature-box feature-box-left-icon-middle last-paragraph-no-margin">
                             <div class="feature-box-icon me-15px lh-0px">
                                 <i class="bi bi-calendar-event icon-very-medium text-white"></i>
                             </div>
                             <div class="feature-box-content">
-                                <span class="d-inline-block alt-font text-white fs-20">Full Day Education</span>
+                                <span class="d-inline-block alt-font text-white fs-22">Full Day Education</span>
                             </div>
                             <div class="mt-10px w-100">Immersive learning experiences from industry leaders and
                                 financial experts.</div>
@@ -353,13 +417,13 @@
                     </div>
                     <!-- end features box item -->
                     <!-- start features box item -->
-                    <div class="icon-with-text-style-01 mb-40px md-mb-30px">
+                    <div class="icon-with-text-style-01 mb-30px">
                         <div class="feature-box feature-box-left-icon-middle last-paragraph-no-margin">
                             <div class="feature-box-icon me-15px lh-0px">
                                 <i class="bi bi-lightning-fill icon-very-medium text-white"></i>
                             </div>
                             <div class="feature-box-content">
-                                <span class="d-inline-block alt-font text-white fs-20">Networking & Partnerships</span>
+                                <span class="d-inline-block alt-font text-white fs-22">Networking & Partnerships</span>
                             </div>
                             <div class="mt-10px w-100">Connect with 600+ investors, entrepreneurs, and business leaders
                                 worldwide.</div>
@@ -369,7 +433,7 @@
                     <a href="demo-conference-about-event.html"
                         class="btn btn-large btn-dark-gray btn-hover-animation btn-round-edge btn-box-shadow align-self-center">
                         <span>
-                            <span class="btn-text">Learn more</span>
+                            <span class="btn-text text-uppercase">Learn more</span>
                             <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
                         </span>
                     </a>
@@ -438,6 +502,45 @@
                             <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
                         </span>
                     </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end section -->
+    <!-- start section -->
+    <section class="p-0 overflow-hidden">
+        <div class="marquee-wrapper">
+            <div class="container mb-35px sm-mb-25px">
+                <div class="row">
+                    <div class="col-12 text-center text-md-start">
+                        <span class="text-white text-uppercase alt-font fw-500 fs-14 ls-1px"><span
+                                class="w-20px h-2px d-inline-block bg-base-color me-10px align-middle"></span>Topics
+                            Covered Throughout May</span>
+                    </div>
+                </div>
+            </div>
+            <div class="marquee-container">
+                <div class="marquee-scroll">
+                    <!-- Original items -->
+                    <div class="marquee-item"><span class="pill-text text-uppercase">Financial Literacy</span></div>
+                    <div class="marquee-item"><span class="pill-text text-uppercase">Investment Strategies</span></div>
+                    <div class="marquee-item"><span class="pill-text text-uppercase">Budgeting</span></div>
+                    <div class="marquee-item"><span class="pill-text text-uppercase">Stocks & Shares</span></div>
+                    <div class="marquee-item"><span class="pill-text text-uppercase">Property Investment</span></div>
+                    <div class="marquee-item"><span class="pill-text text-uppercase">AI Tools for Finance</span></div>
+                    <div class="marquee-item"><span class="pill-text text-uppercase">Entrepreneurship</span></div>
+                    <div class="marquee-item"><span class="pill-text text-uppercase">Lectures & Presentations</span>
+                    </div>
+                    <!-- Duplicate items for seamless loop -->
+                    <div class="marquee-item"><span class="pill-text text-uppercase">Financial Literacy</span></div>
+                    <div class="marquee-item"><span class="pill-text text-uppercase">Investment Strategies</span></div>
+                    <div class="marquee-item"><span class="pill-text text-uppercase">Budgeting</span></div>
+                    <div class="marquee-item"><span class="pill-text text-uppercase">Stocks & Shares</span></div>
+                    <div class="marquee-item"><span class="pill-text text-uppercase">Property Investment</span></div>
+                    <div class="marquee-item"><span class="pill-text text-uppercase">AI Tools for Finance</span></div>
+                    <div class="marquee-item"><span class="pill-text text-uppercase">Entrepreneurship</span></div>
+                    <div class="marquee-item"><span class="pill-text text-uppercase">Lectures & Presentations</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -726,160 +829,9 @@
         </div>
     </section>
     <!-- end section -->
-    <!-- start section -->
-    <section
-        class="bg-dark-midnight-blue background-position-right-bottom background-no-repeat sm-background-image-none"
-        style="background-image: url('images/demo-conference-about-bg.png')">
-        <div class="container">
-            <div class="row align-items-center mb-8">
-                <div class="col-xl-4 col-lg-5 text-center text-lg-start md-mb-30px"
-                    data-anime='{ "translateX": [-30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                    <h2 class="alt-font fw-500 text-white ls-minus-2px"><span
-                            class="w-20px h-4px d-inline-block bg-base-color me-10px"></span>Conference packages</h2>
-                    <p class="mb-35px md-w-80 sm-w-100 md-mx-auto">Invest in your financial future. Select a
-                        registration pass that aligns with your goals for wealth creation and professional growth.</p>
-                    <a href="demo-conference-pricing.html"
-                        class="btn btn-large btn-dark-gray btn-hover-animation btn-round-edge btn-box-shadow align-self-center">
-                        <span>
-                            <span class="btn-text">View all plans</span>
-                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                        </span>
-                    </a>
-                </div>
-                <div class="col-lg-7 offset-xl-1">
-                    <div
-                        class="row row-cols-1 row-cols-md-2 align-items-center justify-content-center mt-35px sm-mt-20px g-0">
-                        <!-- start pricing item -->
-                        <div class="col px-md-0 pricing-table-style-02 position-relative transition-inner-all sm-mb-30px"
-                            data-anime='{ "translateX": [50, 0], "opacity": [0,1], "duration": 600, "delay": 500, "staggervalue": 200, "easing": "easeOutQuad" }'>
-                            <div
-                                class="pricing-table border border-color-transparent-white-light text-center border-radius-6px pt-17 pb-17 ps-15 pe-15 lg-ps-13 lg-pe-13 box-shadow-large">
-                                <div class="pricing-header">
-                                    <i
-                                        class="line-icon-Financial align-middle text-center text-base-color icon-extra-large mb-20px"></i>
-                                    <div class="alt-font text-uppercase fs-16 fw-500">Standard Pass</div>
-                                    <h3 class="text-white mb-0 fw-500">£199</h3>
-                                </div>
-                                <div class="pricing-body pt-20px pb-30px">
-                                    <ul class="list-style-01 ps-0 mb-0 opacity-7">
-                                        <li class="border-color-transparent-white-light pt-10px pb-10px"><span
-                                                class="text-white">Full Access</span> to all 3 Days</li>
-                                        <li class="border-color-transparent-white-light pt-10px pb-10px"><span
-                                                class="text-white">Digital</span> Resource Pack</li>
-                                        <li class="border-color-transparent-white-light pt-10px pb-10px"><span
-                                                class="text-white">Coffee</span> & Refreshments</li>
-                                        <li class="pt-10px pb-10px"><span class="text-white">Attendance</span>
-                                            Certificate
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="pricing-footer">
-                                    <a href="demo-conference-registration.html"
-                                        class="btn btn-small btn-dark-gray btn-hover-animation btn-round-edge btn-box-shadow align-self-center">
-                                        <span>
-                                            <span class="btn-text">Book now</span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end pricing item -->
-                        <!-- start pricing item -->
-                        <div class="col px-md-0 pricing-table-style-02 position-relative transition-inner-all"
-                            data-anime='{ "el": "childs", "translateX": [30, 0], "opacity": [0,1], "duration": 600, "delay": 100, "staggervalue": 200, "easing": "easeOutQuad" }'>
-                            <div
-                                class="pricing-table popular-item border border-color-transparent-white-light bg-dark-midnight-blue text-center border-radius-6px pt-25 pb-25 ps-15 pe-15 lg-ps-13 lg-pe-13 box-shadow-large">
-                                <div class="pricing-header">
-                                    <div
-                                        class="popular-label alt-font fw-500 fs-14 text-white bg-base-color text-uppercase border-radius-2px">
-                                        Most Popular</div>
-                                    <i
-                                        class="line-icon-Crown-2 align-middle text-center text-base-color icon-extra-large mb-20px"></i>
-                                    <div class="alt-font text-uppercase fs-16 fw-500">VIP Partnership</div>
-                                    <h3 class="text-white mb-0 fw-500">£399</h3>
-                                </div>
-                                <div class="pricing-body pt-20px pb-30px">
-                                    <ul class="list-style-01 ps-0 mb-0 opacity-7">
-                                        <li class="border-color-transparent-white-light pt-10px pb-10px"><span
-                                                class="text-white">VIP</span> Reserved Seating</li>
-                                        <li class="border-color-transparent-white-light pt-10px pb-10px"><span
-                                                class="text-white">Networking</span> Lunch with Speakers</li>
-                                        <li class="border-color-transparent-white-light pt-10px pb-10px"><span
-                                                class="text-white">Business</span> Strategy Session</li>
-                                        <li class="pt-10px pb-10px"><span class="text-white">Lifetime</span> Workshop
-                                            Access
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="pricing-footer">
-                                    <a href="demo-conference-registration.html"
-                                        class="btn btn-small btn-base-color btn-hover-animation btn-round-edge btn-box-shadow align-self-center">
-                                        <span>
-                                            <span class="btn-text">Choose package</span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end pricing item -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row position-relative clients-style-08">
-                <div class="col swiper text-center feather-shadow"
-                    data-slider-options='{ "slidesPerView": 2, "spaceBetween":0, "speed": 4000, "loop": true, "pagination": { "el": ".slider-four-slide-pagination-2", "clickable": false }, "allowTouchMove": false, "autoplay": { "delay":0, "disableOnInteraction": false }, "navigation": { "nextEl": ".slider-four-slide-next-2", "prevEl": ".slider-four-slide-prev-2" }, "keyboard": { "enabled": true, "onlyInViewport": true }, "breakpoints": { "1200": { "slidesPerView": 4 }, "992": { "slidesPerView": 3 }, "768": { "slidesPerView": 2 } }, "effect": "slide" }'>
-                    <div class="swiper-wrapper marquee-slide">
-                        <!-- start client item -->
-                        <div class="swiper-slide">
-                            <a href="#"><img src="images/logo-walmart-white.svg" class="h-40px xs-h-30px" alt=""></a>
-                        </div>
-                        <!-- end client item -->
-                        <!-- start client item -->
-                        <div class="swiper-slide">
-                            <a href="#"><img src="images/logo-monday-white.svg" class="h-40px xs-h-30px" alt=""></a>
-                        </div>
-                        <!-- end client item -->
-                        <!-- start client item -->
-                        <div class="swiper-slide">
-                            <a href="#"><img src="images/logo-envato-white.svg" class="h-40px xs-h-30px" alt=""></a>
-                        </div>
-                        <!-- end client item -->
-                        <!-- start client item -->
-                        <div class="swiper-slide">
-                            <a href="#"><img src="images/logo-awwwards-white.svg" class="h-40px xs-h-30px" alt=""></a>
-                        </div>
-                        <!-- end client item -->
-                        <!-- start client item -->
-                        <div class="swiper-slide">
-                            <a href="#"><img src="images/logo-woocommerce-white.svg" class="h-40px xs-h-30px"
-                                    alt=""></a>
-                        </div>
-                        <!-- end client item -->
-                        <!-- start client item -->
-                        <div class="swiper-slide">
-                            <a href="#"><img src="images/logo-pingdom-white.svg" class="h-40px xs-h-30px" alt=""></a>
-                        </div>
-                        <!-- end client item -->
-                        <!-- start client item -->
-                        <div class="swiper-slide">
-                            <a href="#"><img src="images/logo-monday-white.svg" class="h-40px xs-h-30px" alt=""></a>
-                        </div>
-                        <!-- end client item -->
-                        <!-- start client item -->
-                        <div class="swiper-slide">
-                            <a href="#"><img src="images/logo-envato-white.svg" class="h-40px xs-h-30px" alt=""></a>
-                        </div>
-                        <!-- end client item -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
     <!-- end section -->
+
     <!-- start section -->
     <section class="position-relative overflow-hidden" data-parallax-background-ratio="0.5"
         style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000')"
@@ -1060,7 +1012,7 @@
                 <div class="col-lg-3 col-sm-6 md-mb-35px">
                     <span class="alt-font d-block text-white mb-20px fs-20">Liberty Christian Connections</span>
                     <div class="elements-social social-icon-style-02">
-                        <ul class="medium-icon light ps-0">
+                        <ul class="medium-icon light ps-0 justify-content-center justify-content-sm-start">
                             <li><a class="facebook" href="https://www.facebook.com/" target="_blank"><i
                                         class="fa-brands fa-facebook-f"></i></a></li>
                             <li><a class="instagram" href="https://www.instagram.com/" target="_blank"><i
@@ -1074,7 +1026,7 @@
                 <!-- start footer column -->
                 <div class="col-lg-3 col-sm-6 md-mb-35px">
                     <span class="alt-font d-block text-white mb-10px fs-20">Useful Links</span>
-                    <ul class="list-style-02 ps-0 mb-0">
+                    <ul class="list-style-02 ps-0 mb-0 ">
                         <li><a href="#">Offering and Donation</a></li>
                         <li><a href="#">House Fellowship</a></li>
                         <li><a href="#">Liberty Academy</a></li>
@@ -1083,9 +1035,9 @@
                 </div>
                 <!-- end footer column -->
                 <!-- start footer column -->
-                <div class="col-lg-3 col-sm-6 xs-mb-35px">
+                <div class="col-lg-3 col-sm-6 xs-mb-30px">
                     <span class="alt-font d-block text-white mb-10px fs-20">Visit Us</span>
-                    <p class="w-85 lg-w-100 md-w-70 sm-w-90 xs-w-100 mb-5px text-light-opacity">
+                    <p class="w-85 lg-w-100 md-w-70 sm-w-90 xs-w-100 mx-auto mx-sm-0 mb-5px text-light-opacity">
                         Liberty House, 1, Clark’s Road,<br>
                         Ilford IG1 1UT, London, UK
                     </p>
@@ -1103,7 +1055,8 @@
                 </div>
                 <!-- end footer column -->
             </div>
-            <div class="row align-items-center pt-6 md-pt-50px border-top border-color-transparent-white-light mt-5">
+            <div
+                class="row align-items-center pt-6 md-pt-50px xs-pt-30px border-top border-color-transparent-white-light mt-5 xs-mt-30px">
                 <div class="col-lg-4 text-center text-lg-start">
                     <a href="index.html" class="footer-logo d-inline-block"><img src="images/lccLogo.png"
                             data-at2x="images/lccLogo.png" alt="Liberty Christian Connections"
