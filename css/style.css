@@ -7139,18 +7139,14 @@ header .navbar-brand {
   display: inline-block;
   font-size: 0;
 }
-header .navbar-brand .default-logo {
+header .navbar-brand .navbar-logo {
   visibility: visible;
   opacity: 1;
   width: auto;
 }
-header .navbar-brand .alt-logo, header .navbar-brand .mobile-logo {
-  visibility: hidden;
-  opacity: 0;
-  width: 0;
-}
 header .navbar-brand img {
   max-height: 46px;
+  transition: max-height 0.3s ease;
 }
 header .header-top-bar {
   position: fixed;

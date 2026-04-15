@@ -19734,17 +19734,12 @@
   header .navbar-brand {
     padding: 22px 0;
   }
-  header .navbar-brand .default-logo, header .navbar-brand .alt-logo {
-    visibility: hidden !important;
-    opacity: 0 !important;
-    width: 0 !important;
-  }
-  header .navbar-brand .mobile-logo {
+  header .navbar-brand .navbar-logo {
     visibility: visible !important;
     opacity: 1 !important;
     width: auto !important;
   }
-  header .navbar-brand .mobile-logo:focus {
+  header .navbar-brand .navbar-logo:focus {
     outline: none;
   }
   header .navbar-brand:focus {
@@ -19759,10 +19754,10 @@
   header.sticky .fixed-header .navbar-brand, header.sticky .disable-fixed .navbar-brand {
     padding: 22px 0;
   }
-  header.sticky.sticky-active .navbar-brand .default-logo, header.sticky.sticky-active .navbar-brand .alt-logo {
-    visibility: hidden;
-    opacity: 0;
-    width: 0;
+  header.sticky.sticky-active .navbar-brand .navbar-logo {
+    visibility: visible;
+    opacity: 1;
+    width: auto;
   }
   header.sticky .header-icon .header-language a {
     padding-top: 0;

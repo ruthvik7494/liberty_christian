@@ -24,17 +24,17 @@ dist/
 build/
 *.map
 
-# Minified files - excluded (regenerate from source via build tool)
-css/*.min.css
-js/*.min.js
-rtl-css/*.min.css
+# Minified files - included for static deployment
+# css/*.min.css
+# js/*.min.js
+# rtl-css/*.min.css
 
 # Vendor/Third-party (keep in git unless very large)
 # vendors/
 # revolution-addons/
 
-# Demo folders - EXCLUDED (contains hundreds of template variations)
-demos/
+# Demo folders - included specific conference assets
+# demos/
 
 # Environment & Configuration
 .env
