@@ -1,0 +1,68 @@
+# Operating System
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE & Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# Node.js & Package managers
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Build & Distribution
+dist/
+build/
+*.map
+
+# Minified files - excluded (regenerate from source via build tool)
+css/*.min.css
+js/*.min.js
+rtl-css/*.min.css
+
+# Vendor/Third-party (keep in git unless very large)
+# vendors/
+# revolution-addons/
+
+# Demo folders - EXCLUDED (contains hundreds of template variations)
+demos/
+
+# Environment & Configuration
+.env
+.env.local
+.env.*.local
+config.local.php
+
+# OS & Temporary files
+*.tmp
+*.bak
+*.backup
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+logs/
+
+# Cache
+.cache/
+*.cache
+
+# Local testing/development
+local/
+private/
+test-local/
+
+# Compiled files (if applicable)
+*.class
+*.pyc
+*.pyo
