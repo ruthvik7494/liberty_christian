@@ -5,12 +5,53 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 /* variable */
 :root {     
-    --base-color: #d90a2c; 
+    --base-color: #013220; 
+    --accent-gold: #D4AF37;
     --dark-gray: #2b2b2f;
     --medium-gray: #7a777e;
     --alt-font: 'DM Sans', sans-serif;
+    --alt-font: 'DM Sans', sans-serif;
     --primary-font: 'DM Sans', sans-serif;
 }  
+
+/* Theme Buttons */
+.btn-accent-gold {
+    background-color: var(--accent-gold) !important;
+    border-color: var(--accent-gold) !important;
+    color: #000000 !important; /* Dark text on gold for better legibility */
+}
+.btn-accent-gold:hover {
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+    color: var(--accent-gold) !important;
+}
+.btn-forest-green {
+    background-color: var(--base-color) !important;
+    border-color: var(--base-color) !important;
+    color: #ffffff !important;
+}
+.btn-forest-green:hover {
+    background-color: var(--accent-gold) !important;
+    border-color: var(--accent-gold) !important;
+    color: #000000 !important;
+}
+
+/* Global Theme Utilities */
+.text-outline-gold {
+    -webkit-text-stroke-color: var(--accent-gold) !important;
+}
+.text-accent-gold {
+    color: var(--accent-gold) !important;
+}
+.text-accent-gold-hover:hover {
+    color: var(--accent-gold) !important;
+}
+.bg-accent-gold {
+    background-color: var(--accent-gold) !important;
+}
+.bg-forest-green {
+    background-color: #013220 !important;
+}
 /* reset */
 body { 
     font-size: 17px;
@@ -82,14 +123,14 @@ header .btn.btn-rounded.btn-small {
 }
 /* bg color */
 .bg-midnight-blue {
-    background-color: #1c1c1f;
+    background-color: #002B1B; /* Very Dark Green */
 }
 .bg-dark-midnight-blue {
-    background-color: #17161a;
+    background-color: #001A10; /* Near Black Green */
 } 
 /* bg color transparent */
 .bg-base-color-transparent {
-    background-color: rgba(217, 10, 44,.9);
+    background-color: rgba(1, 50, 32, .9);
 }
 /* text color */
 .body-text-color {

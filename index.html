@@ -26,7 +26,7 @@
     <style>
         .marquee-wrapper {
             padding: 60px 0;
-            background: #17161a;
+            background: #001A10; /* Match bg-dark-midnight-blue */
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
@@ -60,22 +60,22 @@
         }
 
         .pill-text {
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
             border-radius: 4px;
             padding: 12px 30px;
             color: #ffffff;
             font-size: 16px;
             font-weight: 400;
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(212, 175, 55, 0.05);
             white-space: nowrap;
             font-family: var(--alt-font);
             transition: all 0.3s ease;
         }
 
         .marquee-item:hover .pill-text {
-            border-color: var(--base-color);
-            color: var(--base-color);
-            background: rgba(217, 10, 44, 0.05);
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+            background: rgba(212, 175, 55, 0.05);
         }
 
         @media (max-width: 767px) {
@@ -87,6 +87,18 @@
             .marquee-wrapper {
                 padding: 40px 0;
             }
+        }
+        .text-outline-gold {
+            -webkit-text-stroke: 1px var(--accent-gold);
+            text-stroke: 1px var(--accent-gold);
+            color: transparent;
+        }
+
+        .text-accent-gold {
+            color: var(--accent-gold) !important;
+        }
+        .bg-accent-gold {
+            background-color: var(--accent-gold) !important;
         }
     </style>
 </head>
@@ -162,8 +174,8 @@
                                     </li>
                                     <li>
                                         <a href="demo-conference-speakers.html"
-                                            class="btn btn-dark-gray btn-round-edge btn-box-shadow align-self-center text-center text-white">View
-                                            all speakers</a>
+                                            class="btn btn-accent-gold btn-round-edge btn-box-shadow align-self-center text-center">View
+                                             all speakers</a>
                                     </li>
                                 </ul>
                             </li>
@@ -206,19 +218,21 @@
                     class="col-md-12 position-relative text-white d-flex flex-column justify-content-center text-center h-100">
                     <span
                         class="alt-font fs-225 lg-fs-190 md-fs-160 sm-fs-150 xs-fs-90 ls-minus-9px md-ls-minus-5px xs-ls-minus-2px fw-600 text-outline text-outline-width-2px d-inline-block"
+                        style="--text-outline-color: var(--accent-gold); color: transparent;"
                         data-fancy-text='{ "string": ["Financial "], "duration": 500, "delay": 500, "speed": 50, "clipPath": ["inset(0 200px 0 0)", "inset(0px 0px 0px 0px)"], "easing": "easeOutCubic" }'></span>
                     <span
-                        class="alt-font fs-160 md-fs-140 xs-fs-80 position-relative top-minus-40px lg-top-minus-20px xs-top-minus-5px ls-minus-10px md-minus-8px xs-ls-minus-3px text-white fw-600 text-shadow-double-large"
+                        class="alt-font fs-160 md-fs-140 xs-fs-80 position-relative top-minus-40px lg-top-minus-20px xs-top-minus-5px ls-minus-10px md-minus-8px xs-ls-minus-3px fw-600 text-shadow-double-large"
+                        style="color: var(--accent-gold);"
                         data-anime='{ "opacity": [0, 1], "easing": "easeOutQuad", "duration": 1000, "delay": 800 }'>Dominion
                         2026</span>
                     <a href="demo-conference-registration.html"
-                        class="btn btn-extra-large btn-base-color btn-hover-animation btn-rounded btn-box-shadow align-self-center lg-mt-20px sm-mt-5px xs-mt-20px"
-                        data-anime='{ "opacity": [0, 1], "translateY": [50, 0], "easing": "easeOutCubic", "duration": 1000, "delay": 800 }'>
-                        <span>
-                            <span class="btn-text">Secure your seat</span>
-                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                        </span>
-                    </a>
+                                                        class="btn btn-extra-large btn-rounded btn-box-shadow align-self-center lg-mt-20px sm-mt-5px xs-mt-20px btn-accent-gold"
+                                                        data-anime='{ "opacity": [0, 1], "translateY": [50, 0], "easing": "easeOutCubic", "duration": 1000, "delay": 800 }'>
+                                                        <span>
+                                                            <span class="btn-text">Secure your seat</span>
+                                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                                                        </span>
+                                                    </a>
                     <div class="position-absolute bottom-60px md-bottom-40px xs-bottom-20px left-0px right-0px"
                         data-anime='{ "opacity": [0, 1], "translateY": [50, 0], "easing": "easeOutCubic", "duration": 1000, "delay": 1000 }'>
                         <span class="alt-font text-uppercase fw-500 ls-1px fs-15"><i
@@ -238,7 +252,7 @@
                 <div class="col md-mb-30px">
                     <div class="feature-box feature-box-center-icon">
                         <div class="feature-box-icon mb-20px">
-                            <i class="bi bi-people-fill icon-extra-large text-base-color"></i>
+                            <i class="bi bi-people-fill icon-extra-large text-accent-gold"></i>
                         </div>
                         <div class="feature-box-content">
                             <h3 class="alt-font fs-60 fw-700 text-dark-midnight-blue mb-10px">80<span
@@ -251,7 +265,7 @@
                 <div class="col md-mb-30px">
                     <div class="feature-box feature-box-center-icon">
                         <div class="feature-box-icon mb-20px">
-                            <i class="bi bi-person-check-fill icon-extra-large text-base-color"></i>
+                            <i class="bi bi-person-check-fill icon-extra-large text-accent-gold"></i>
                         </div>
                         <div class="feature-box-content">
                             <h3 class="alt-font fs-60 fw-700 text-dark-midnight-blue mb-10px">60<span
@@ -264,7 +278,7 @@
                 <div class="col md-mb-30px">
                     <div class="feature-box feature-box-center-icon">
                         <div class="feature-box-icon mb-20px">
-                            <i class="bi bi-briefcase-fill icon-extra-large text-base-color"></i>
+                            <i class="bi bi-briefcase-fill icon-extra-large text-accent-gold"></i>
                         </div>
                         <div class="feature-box-content">
                             <h3 class="alt-font fs-60 fw-700 text-dark-midnight-blue mb-10px">700<span
@@ -277,7 +291,7 @@
                 <div class="col">
                     <div class="feature-box feature-box-center-icon">
                         <div class="feature-box-icon mb-20px">
-                            <i class="bi bi-award-fill icon-extra-large text-base-color"></i>
+                            <i class="bi bi-award-fill icon-extra-large text-accent-gold"></i>
                         </div>
                         <div class="feature-box-content">
                             <h3 class="alt-font fs-60 fw-700 text-dark-midnight-blue mb-10px">25<span
@@ -300,7 +314,7 @@
                     <div class="feature-box feature-box-left-icon-middle">
                         <div class="feature-box-icon ms-30px me-30px lg-ms-20px lg-me-20px">
                             <h1
-                                class="alt-font text-outline text-outline-width-2px text-outline-color-base-color fw-700 ls-minus-1px mb-0">
+                                class="alt-font text-outline text-outline-width-2px text-outline-gold fw-700 ls-minus-1px mb-0">
                                 01</h1>
                         </div>
                         <div
@@ -315,7 +329,7 @@
                     <div class="feature-box feature-box-left-icon-middle">
                         <div class="feature-box-icon ms-30px me-30px lg-ms-20px lg-me-20px">
                             <h1
-                                class="alt-font text-outline text-outline-width-2px text-outline-color-base-color fw-700 ls-minus-1px mb-0">
+                                class="alt-font text-outline text-outline-width-2px text-outline-gold fw-700 ls-minus-1px mb-0">
                                 02</h1>
                         </div>
                         <div
@@ -330,7 +344,7 @@
                     <div class="feature-box feature-box-left-icon-middle">
                         <div class="feature-box-icon ms-30px me-30px lg-ms-20px lg-me-20px">
                             <h1
-                                class="alt-font text-outline text-outline-width-2px text-outline-color-base-color fw-700 ls-minus-1px mb-0">
+                                class="alt-font text-outline text-outline-width-2px text-outline-gold fw-700 ls-minus-1px mb-0">
                                 03</h1>
                         </div>
                         <div
@@ -399,14 +413,14 @@
                 <div class="col-xl-5 col-lg-6"
                     data-anime='{ "el": "childs", "translateY": [50, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                     <h2 class="alt-font text-white fw-500 ls-minus-2px mb-40px sm-mb-30px">
-                        <span class="w-20px h-4px d-inline-block bg-base-color me-10px"></span>What to Expect
+                        <span class="d-block w-60px h-4px bg-accent-gold mb-25px"></span>What to Expect
                     </h2>
                     <!-- start features box item -->
                     <div
                         class="icon-with-text-style-01 mb-20px pb-20px border-bottom border-color-transparent-white-light">
                         <div class="feature-box feature-box-left-icon-middle last-paragraph-no-margin">
                             <div class="feature-box-icon me-15px lh-0px">
-                                <i class="bi bi-calendar-event icon-very-medium text-white"></i>
+                                <i class="bi bi-calendar-event icon-very-medium text-accent-gold"></i>
                             </div>
                             <div class="feature-box-content">
                                 <span class="d-inline-block alt-font text-white fs-22">Full Day Education</span>
@@ -420,7 +434,7 @@
                     <div class="icon-with-text-style-01 mb-30px">
                         <div class="feature-box feature-box-left-icon-middle last-paragraph-no-margin">
                             <div class="feature-box-icon me-15px lh-0px">
-                                <i class="bi bi-lightning-fill icon-very-medium text-white"></i>
+                                <i class="bi bi-lightning-fill icon-very-medium text-accent-gold"></i>
                             </div>
                             <div class="feature-box-content">
                                 <span class="d-inline-block alt-font text-white fs-22">Networking & Partnerships</span>
@@ -431,7 +445,7 @@
                     </div>
                     <!-- end features box item -->
                     <a href="demo-conference-about-event.html"
-                        class="btn btn-large btn-dark-gray btn-hover-animation btn-round-edge btn-box-shadow align-self-center">
+                        class="btn btn-large btn-accent-gold btn-hover-animation btn-round-edge btn-box-shadow align-self-center">
                         <span>
                             <span class="btn-text text-uppercase">Learn more</span>
                             <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
@@ -450,7 +464,7 @@
                 <div class="col-12 text-center py-5"
                     data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                     <h2 class="alt-font text-white fw-500 ls-minus-2px"><span
-                            class="w-20px h-4px d-inline-block bg-base-color me-10px"></span>Core Tracks</h2>
+                            class="w-20px h-4px d-inline-block bg-accent-gold me-10px"></span>Core Tracks</h2>
                 </div>
             </div>
             <div class="row g-0"
@@ -485,7 +499,7 @@
                 </div>
                 <div class="col-lg-6 order-lg-1 pe-lg-5"
                     data-anime='{ "translateX": [-50, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                    <span class="text-base-color alt-font text-uppercase fw-500 fs-14 letter-spacing-2px">Headline
+                    <span class="text-accent-gold alt-font text-uppercase fw-500 fs-14 letter-spacing-2px">Headline
                         Speaker</span>
                     <h2 class="text-white alt-font fs-40 fw-600 my-4">
                         Dr. Alexander Sterling
@@ -496,7 +510,7 @@
                         advised Fortune 500 companies. His innovative approaches to financial planning have influenced
                         industry standards and transformed the way businesses approach capital allocation.</p>
                     <a href="demo-conference-speaker-details.html"
-                        class="btn btn-large btn-base-color btn-hover-animation btn-round-edge">
+                        class="btn btn-large btn-accent-gold btn-hover-animation btn-round-edge">
                         <span>
                             <span class="btn-text">Speaker Details</span>
                             <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
@@ -514,7 +528,7 @@
                 <div class="row">
                     <div class="col-12 text-center text-md-start">
                         <span class="text-white text-uppercase alt-font fw-500 fs-14 ls-1px"><span
-                                class="w-20px h-2px d-inline-block bg-base-color me-10px align-middle"></span>Topics
+                                class="w-20px h-2px d-inline-block bg-accent-gold me-10px align-middle"></span>Topics
                             Covered Throughout May</span>
                     </div>
                 </div>
@@ -553,7 +567,7 @@
                 <div class="col-xxl-8 col-lg-7 md-mb-20px"
                     data-anime='{ "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                     <h2 class="alt-font text-white fw-500 ls-minus-2px mb-0"><span
-                            class="w-20px h-4px d-inline-block bg-base-color me-10px"></span>Supporting Speakers</h2>
+                            class="w-20px h-4px d-inline-block bg-accent-gold me-10px"></span>Supporting Speakers</h2>
                 </div>
                 <div class="col-xxl-4 col-lg-5 col-md-8 col-sm-10 last-paragraph-no-margin"
                     data-anime='{ "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
@@ -581,7 +595,7 @@
                     </div>
                     <span class="fs-18 alt-font text-white vertical-align-top">Robert Finch</span>
                     <span class="fs-14 d-block lh-normal text-light-opacity">Head of Wealth Management</span>
-                    <span class="fs-12 d-block lh-normal text-base-color">Finch Financial Group</span>
+                    <span class="fs-12 d-block lh-normal text-accent-gold">Finch Financial Group</span>
                 </div>
 
                 <!-- Speaker 2 -->
@@ -601,7 +615,7 @@
                     </div>
                     <span class="fs-18 alt-font text-white vertical-align-top">Dr. Emily Zhang</span>
                     <span class="fs-14 d-block lh-normal text-light-opacity">AI & FinTech Lead</span>
-                    <span class="fs-12 d-block lh-normal text-base-color">Zhang Tech Ventures</span>
+                    <span class="fs-12 d-block lh-normal text-accent-gold">Zhang Tech Ventures</span>
                 </div>
 
                 <!-- Speaker 3 -->
@@ -621,7 +635,7 @@
                     </div>
                     <span class="fs-18 alt-font text-white vertical-align-top">Marcus Thorne</span>
                     <span class="fs-14 d-block lh-normal text-light-opacity">Serial Entrepreneur & Coach</span>
-                    <span class="fs-12 d-block lh-normal text-base-color">Thorne Enterprises</span>
+                    <span class="fs-12 d-block lh-normal text-accent-gold">Thorne Enterprises</span>
                 </div>
 
                 <!-- Speaker 4 -->
@@ -641,7 +655,7 @@
                     </div>
                     <span class="fs-18 alt-font text-white vertical-align-top">Sarah Jenkins</span>
                     <span class="fs-14 d-block lh-normal text-light-opacity">Property Specialist</span>
-                    <span class="fs-12 d-block lh-normal text-base-color">Jenkins Realty Advisors</span>
+                    <span class="fs-12 d-block lh-normal text-accent-gold">Jenkins Realty Advisors</span>
                 </div>
 
                 <!-- Speaker 5 -->
@@ -661,7 +675,7 @@
                     </div>
                     <span class="fs-18 alt-font text-white vertical-align-top">David Alabi</span>
                     <span class="fs-14 d-block lh-normal text-light-opacity">Digital Finance Strategist</span>
-                    <span class="fs-12 d-block lh-normal text-base-color">Alabi Digital Ltd</span>
+                    <span class="fs-12 d-block lh-normal text-accent-gold">Alabi Digital Ltd</span>
                 </div>
 
                 <!-- Speaker 6 -->
@@ -681,7 +695,7 @@
                     </div>
                     <span class="fs-18 alt-font text-white vertical-align-top">Elena Rossi</span>
                     <span class="fs-14 d-block lh-normal text-light-opacity">Founder & CEO</span>
-                    <span class="fs-12 d-block lh-normal text-base-color">Rossi Growth Partners</span>
+                    <span class="fs-12 d-block lh-normal text-accent-gold">Rossi Growth Partners</span>
                 </div>
 
                 <!-- Speaker 7 -->
@@ -701,7 +715,7 @@
                     </div>
                     <span class="fs-18 alt-font text-white vertical-align-top">Samuel Okafor</span>
                     <span class="fs-14 d-block lh-normal text-light-opacity">Financial Literacy Educator</span>
-                    <span class="fs-12 d-block lh-normal text-base-color">Okafor Foundation</span>
+                    <span class="fs-12 d-block lh-normal text-accent-gold">Okafor Foundation</span>
                 </div>
 
                 <!-- Speaker 8 -->
@@ -721,7 +735,7 @@
                     </div>
                     <span class="fs-18 alt-font text-white vertical-align-top">Grace Middleton</span>
                     <span class="fs-14 d-block lh-normal text-light-opacity">Investment Mentor & Author</span>
-                    <span class="fs-12 d-block lh-normal text-base-color">Middleton Consulting</span>
+                    <span class="fs-12 d-block lh-normal text-accent-gold">Middleton Consulting</span>
                 </div>
 
             </div>
@@ -745,7 +759,7 @@
                             in May 2026, featuring the Financial Dominion Conference and our monthly stewardship
                             programs.</p>
                         <a href="demo-conference-schedule.html"
-                            class="btn btn-large btn-dark-gray btn-hover-animation btn-round-edge btn-box-shadow align-self-center">
+                            class="btn btn-large btn-accent-gold btn-hover-animation btn-round-edge btn-box-shadow align-self-center">
                             <span>
                                 <span class="btn-text">Download schedule</span>
                                 <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
