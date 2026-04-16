@@ -49,7 +49,8 @@
                             <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                             <li class="nav-item"><a href="demo-conference-about-event.html" class="nav-link">About
                                     event</a></li>
-                            <li class="nav-item"><a href="demo-conference-speakers.html" class="nav-link">Speakers</a></li>
+                            <li class="nav-item"><a href="demo-conference-speakers.html" class="nav-link">Speakers</a>
+                            </li>
                             <li class="nav-item"><a href="demo-conference-schedule.html" class="nav-link">Schedule</a>
                             </li>
                             <li class="nav-item"><a href="demo-conference-gallery.html" class="nav-link">Gallery</a>
@@ -123,44 +124,75 @@
                         your transformation.</h2>
                 </div>
             </div>
-            <div class="row row-cols-md-1 justify-content-center"
+            <div class="row row-cols-md-1"
                 data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 600, "delay": 100, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                <div class="col-xl-9 col-lg-11">
-                    <form action="email-templates/contact-form.php" method="post" class="row contact-form-style-02">
+                <!-- Left side: Form -->
+                <div class="col-lg-7 md-mb-50px">
+                    <form id="registrationForm" method="post" class="row contact-form-style-02">
                         <div class="col-md-12 mb-30px">
                             <input
                                 class="input-name bg-transparent border-color-transparent-white-light form-control required"
-                                type="text" name="name" placeholder="Full Name*" />
+                                type="text" name="name" placeholder="Full Name*" required />
                         </div>
                         <div class="col-md-12 mb-30px">
                             <input class="bg-transparent border-color-transparent-white-light form-control required"
-                                type="email" name="email" placeholder="Email Address*" />
+                                type="email" name="email" placeholder="Email Address*" required />
                         </div>
                         <div class="col-md-12 mb-30px">
                             <input class="bg-transparent border-color-transparent-white-light form-control" type="tel"
                                 name="phone" placeholder="Phone Number" />
                         </div>
-                       
-                        
-                        <div class="col-lg-7 col-md-8">
-                            <p class="mb-0 lh-30 text-center text-md-start fs-16">Your privacy is important to us. By
-                                registering, you agree to receive conference updates via email.</p>
+
+                        <div class="col-12 mb-20px">
+                            <p class="mb-0 lh-30 text-start fs-16 text-light-opacity">By registering, you agree to
+                                receive conference updates via email.</p>
                         </div>
-                        <div class="col-lg-5 col-md-4 text-center text-md-end sm-mt-20px">
-                            <input type="hidden" name="redirect" value="">
+                        <div class="col-12 text-start">
                             <button
-                                class="btn btn-medium btn-accent-gold btn-hover-animation btn-round-edge btn-box-shadow align-self-center submit"
-                                type="submit">
+                                class="btn btn-medium btn-accent-gold btn-hover-animation btn-round-edge btn-box-shadow align-self-center"
+                                type="button" onclick="submitRegistration()">
                                 <span>
-                                    <span class="btn-text">Confirm Registration</span>
+                                    <span class="btn-text" id="regBtnText">Confirm Registration</span>
                                     <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
                                 </span>
                             </button>
                         </div>
                         <div class="col-12">
-                            <div class="form-results mt-20px d-none"></div>
+                            <div id="formSuccess" class="form-results mt-20px d-none alert alert-success">Successfully
+                                registered! See you in London.</div>
+                            <div id="formError" class="form-results mt-20px d-none alert alert-danger">Error submitting
+                                form. Please try again.</div>
                         </div>
                     </form>
+                </div>
+
+                <!-- Right side: Event Info -->
+                <div class="col-lg-5 ps-50px lg-ps-30px md-ps-15px">
+                    <div
+                        class="bg-dark-midnight-blue p-40px lg-p-30px border-radius-6px border border-color-transparent-white-light h-100">
+                        <span class="alt-font text-white fs-24 mb-20px d-block fw-500">Event Information</span>
+                        <div class="mb-30px">
+                            <i class="feather icon-feather-calendar text-accent-gold fs-20 me-10px"></i>
+                            <span class="text-white alt-font fw-500">Dates: 15th - 17th May 2026</span>
+                        </div>
+                        <div class="mb-30px">
+                            <i class="feather icon-feather-clock text-accent-gold fs-20 me-10px"></i>
+                            <span class="text-white alt-font fw-500">Session Times:</span>
+                            <ul class="list-style-02 text-light-opacity ps-30px mt-10px">
+                                <li>Wednesday: 7:00pm - 8:30pm</li>
+                                <li>Sunday: 9:30am - 11:15am</li>
+                            </ul>
+                        </div>
+                        <div class="mb-30px">
+                            <i class="feather icon-feather-map-pin text-accent-gold fs-20 me-10px"></i>
+                            <span class="text-white alt-font fw-500">Location:</span>
+                            <p class="text-light-opacity ps-30px mt-10px">Liberty House, Clarks Road,<br>Ilford IG1 1FT,
+                                London</p>
+                        </div>
+                        <div class="mt-40px">
+                            <img src="images/lccLogo.png" alt="Logo" style="max-height: 40px; opacity: 0.5;">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -258,13 +290,13 @@
                 <div class="col-lg-3 col-sm-6 md-mb-35px">
                     <span class="alt-font d-block text-white mb-20px fs-20">Liberty Christian Connections</span>
                     <div class="elements-social social-icon-style-02">
-                         <ul class="medium-icon light ps-0 justify-content-center justify-content-sm-start">
-                            <li><a class="facebook" href="https://www.facebook.com/libertychristianconnections" target="_blank"><i
-                                        class="fa-brands fa-facebook-f"></i></a></li>
+                        <ul class="medium-icon light ps-0 justify-content-center justify-content-sm-start">
+                            <li><a class="facebook" href="https://www.facebook.com/libertychristianconnections"
+                                    target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
                             <li><a class="instagram" href="https://www.instagram.com/tbgchurch/" target="_blank"><i
                                         class="fa-brands fa-instagram"></i></a></li>
-                            <li><a class="twitter" href="https://www.youtube.com/@rccglibertychristianconnec5605" target="_blank"><i
-                                        class="fa-brands fa-youtube"></i></a></li>
+                            <li><a class="twitter" href="https://www.youtube.com/@rccglibertychristianconnec5605"
+                                    target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -286,7 +318,8 @@
                         Ilford IG1 1FT
                     </p>
                     <a href="tel:02085140145" class="d-block text-white mb-5px">02085140145</a>
-                    <a href="mailto:admin@libertyconnections.net" class="d-block text-white">admin@libertyconnections.net</a>
+                    <a href="mailto:admin@libertyconnections.net"
+                        class="d-block text-white">admin@libertyconnections.net</a>
                 </div>
                 <!-- end footer column -->
                 <!-- start footer column -->
@@ -297,7 +330,8 @@
                         <li>Sunday: 9:30am - 11:15am</li>
                     </ul>
                 </div>
-                <!-- end footer column -->      </div>
+                <!-- end footer column -->
+            </div>
             <div class="row align-items-center pt-6 md-pt-50px border-top border-color-transparent-white-light mt-5">
                 <div class="col-lg-4 text-center text-lg-start">
                     <a href="index.html" class="footer-logo d-inline-block"><img src="images/lccLogo.png"
@@ -322,6 +356,46 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/vendors.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script>
+        function submitRegistration() {
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyQdc0KnPfT8nl7FQ39PC0UL4YY0Du1f4UIZxT5Oqkbr7rnaDLpE6X5ZMrtSQ3ZSBVB/exec';
+            const form = document.getElementById('registrationForm');
+            const btnText = document.getElementById('regBtnText');
+            const successMsg = document.getElementById('formSuccess');
+            const errorMsg = document.getElementById('formError');
+
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            btnText.innerText = 'Sending Data...';
+            
+            const formData = new FormData(form);
+            fetch(scriptURL, { 
+                method: 'POST', 
+                mode: 'no-cors',
+                body: new URLSearchParams(formData)
+            })
+            .then(() => {
+                btnText.innerText = 'Confirm Registration';
+                successMsg.classList.remove('d-none');
+                errorMsg.classList.add('d-none');
+                form.reset();
+                
+                // Hide the message after 5 seconds
+                setTimeout(() => {
+                    successMsg.classList.add('d-none');
+                }, 5000);
+            })
+            .catch(error => {
+                btnText.innerText = 'Confirm Registration';
+                errorMsg.classList.remove('d-none');
+                successMsg.classList.add('d-none');
+                console.error('Error!', error.message);
+            });
+        }
+    </script>
 </body>
 
 </html>
