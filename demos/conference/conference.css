@@ -267,4 +267,16 @@ aside .btn-box-shadow:hover {
         padding: 8px 16px;
         font-size: 14px;
     }
+    footer .alt-font, 
+    footer p, 
+    footer ul, 
+    footer li, 
+    footer a {
+        text-align: center !important;
+        justify-content: center !important;
+    }
+    footer ul.list-style-02 li {
+        display: flex !important;
+        width: 100%;
+    }
 }
