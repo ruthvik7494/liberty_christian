@@ -341,3 +341,15 @@ aside .btn-box-shadow:hover {
     padding: 50px 30px;
     box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
 }
+
+/* Spacing Utilities */
+.pt-80px { padding-top: 80px !important; }
+.lg-pt-100px { padding-top: 100px !important; }
+
+@media (max-width: 991px) {
+    .pt-80px { padding-top: 60px !important; }
+}
+
+@media (max-width: 767px) {
+    .pt-80px { padding-top: 50px !important; }
+}
