@@ -133,14 +133,17 @@
                             <input
                                 class="input-name bg-transparent border-color-transparent-white-light form-control required"
                                 type="text" name="name" placeholder="Full Name*" required />
+                            <div class="field-error text-accent-gold fs-13 mt-5px d-none" id="nameError">Please enter your full name (at least 3 characters).</div>
                         </div>
                         <div class="col-md-12 mb-30px">
                             <input class="bg-transparent border-color-transparent-white-light form-control required"
                                 type="email" name="email" placeholder="Email Address*" required />
+                            <div class="field-error text-accent-gold fs-13 mt-5px d-none" id="emailError">Please enter a valid email address.</div>
                         </div>
                         <div class="col-md-12 mb-30px">
                             <input class="bg-transparent border-color-transparent-white-light form-control" type="tel"
                                 name="phone" placeholder="Phone Number" />
+                            <div class="field-error text-accent-gold fs-13 mt-5px d-none" id="phoneError">Please enter a valid phone number (at least 7 digits).</div>
                         </div>
 
                         <div class="col-12 mb-20px">
@@ -362,16 +365,48 @@
             const form = document.getElementById('registrationForm');
             const btnText = document.getElementById('regBtnText');
             const successMsg = document.getElementById('formSuccess');
-            const errorMsg = document.getElementById('formError');
+            
+            // Error elements
+            const name = form.querySelector('[name="name"]');
+            const email = form.querySelector('[name="email"]');
+            const phone = form.querySelector('[name="phone"]');
+            const nameErr = document.getElementById('nameError');
+            const emailErr = document.getElementById('emailError');
+            const phoneErr = document.getElementById('phoneError');
 
-            if (!form.checkValidity()) {
-                form.reportValidity();
-                return;
+            // 1. Reset Styles and Messages
+            const allInputs = form.querySelectorAll('input');
+            const allErrors = form.querySelectorAll('.field-error');
+            allInputs.forEach(input => input.style.borderColor = '');
+            allErrors.forEach(err => err.classList.add('d-none'));
+
+            // 2. Custom Validation
+            let isValid = true;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const phoneRegex = /^[0-9\-\+\s\(\)]{7,20}$/;
+
+            if (name.value.trim().length < 3) {
+                name.style.borderColor = '#D4AF37';
+                nameErr.classList.remove('d-none');
+                isValid = false;
+            }
+            if (!emailRegex.test(email.value)) {
+                email.style.borderColor = '#D4AF37';
+                emailErr.classList.remove('d-none');
+                isValid = false;
+            }
+            if (phone.value.trim() !== "" && !phoneRegex.test(phone.value)) {
+                phone.style.borderColor = '#D4AF37';
+                phoneErr.classList.remove('d-none');
+                isValid = false;
             }
 
+            if (!isValid) return;
+
+            // 3. Submit
             btnText.innerText = 'Sending Data...';
-            
             const formData = new FormData(form);
+            
             fetch(scriptURL, { 
                 method: 'POST', 
                 mode: 'no-cors',
@@ -380,18 +415,12 @@
             .then(() => {
                 btnText.innerText = 'Confirm Registration';
                 successMsg.classList.remove('d-none');
-                errorMsg.classList.add('d-none');
                 form.reset();
-                
-                // Hide the message after 5 seconds
-                setTimeout(() => {
-                    successMsg.classList.add('d-none');
-                }, 5000);
+                setTimeout(() => { successMsg.classList.add('d-none'); }, 5000);
             })
             .catch(error => {
                 btnText.innerText = 'Confirm Registration';
-                errorMsg.classList.remove('d-none');
-                successMsg.classList.add('d-none');
+                alert('Connection error. Please try again.');
                 console.error('Error!', error.message);
             });
         }
